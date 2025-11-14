@@ -1,4 +1,3 @@
-import React from 'react'
 import RouterSetUp from './RouterSetUp'
 
 function App() {
