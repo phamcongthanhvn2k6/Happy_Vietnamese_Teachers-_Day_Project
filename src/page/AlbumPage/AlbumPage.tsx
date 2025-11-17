@@ -172,7 +172,7 @@ export default function AlbumPage() {
       {/* Nút chuyển trang */}
       {started && (
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/letter-page")}
           className="fixed bottom-4 right-4 bg-pink-400 hover:bg-pink-500 text-white font-semibold px-5 py-3 rounded-full shadow-lg transition-all text-sm sm:text-base"
         >
           ➤ Tiếp tục hành trình

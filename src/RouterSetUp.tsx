@@ -3,6 +3,7 @@ import Start from './page/StartPage/Start'
 import OpeningLetter from './page/OpeningLetter/OpeningLetter'
 import TeacherInfo from './page/TeacherInfo/TeacherInfo'
 import AlbumPage from './page/AlbumPage/AlbumPage'
+import LetterPage from './page/LetterPage/LetterPage'
 
 function RouterSetUp() {
   return (
@@ -14,6 +15,7 @@ function RouterSetUp() {
                 <Route path="/Opening-Letter" element={<OpeningLetter />} />
                 <Route path="/Teacher-Info" element={<TeacherInfo />} />
                 <Route path="/Album-Page" element={<AlbumPage />} />
+                <Route path="/letter-page" element={<LetterPage />} />
             </Routes>
         </BrowserRouter>
     </div>
