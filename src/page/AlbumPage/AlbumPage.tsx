@@ -47,6 +47,18 @@ import album40 from "../../assets/album/40.jpg";
 import album41 from "../../assets/album/41.jpg";
 import album42 from "../../assets/album/42.jpg";
 
+const sceneNames = [
+  "Kỷ Niệm Chụp ảnh Với Cô Hà", "20/11 Cùng Cô Xuân Nè", "Ảnh Nhìn Mờ Điên", "Cảm Ơn Vì Đã Tặng Quần=)))", "Hơn Cả Khu Tự Trị",
+  "Một Buổi Lao Động Công Ích", "Ae Làm Trại Xuyên Đêm Nè", "Vác Xe Lên Và Đi", "Ra Hồ Cá Chụp Trộm", "Đến Giữa Trưa Vẫn Còn Đi",
+  "Chụp Vội Tấm Ảnh", "Ae Đi Nhưng Không Quên Hỏi Thầy Có Nhà Không=)))", "Như Tấm 11", "Ae 12@4 Đông Quá", "Nhà Thầy Không Đủ Chỗ Chụp",
+  "Cảm Ơn Các Bé Mới Lớn Nhé", "Tấm Này Thằng Nào Chụp Xấu Vậy", "Trai Đẹp Thì Mặc Áo Lớp Nhé", "Lần Đầu Đi Múa Của A Thành", "Ae A4 Xập Xình",
+  "Để Đây Không Biết Nói Gì", "Lớp tôi trai ga lăng lắm=))", "Thanh Xuân Của Tôi Đếyyy", "Ôi Đã Sắp Phải Chia Tay rồi sao", "Hét To Vô",
+  "Đứa Nào Mập Nhất Thì Đứng ở Giữa", "Ae Trai Đẹp A4", "Thanh Xuân Vườn trường", "Tập Thể Bóng PCT", "Lớp Tôi Là Số 1",
+  "Sắp Tốt Nghiệp Ròiiii", "Tấm Này Cô Minh Chụp Xấu Quá", "Ai Đẹp Trai Nhất Thì Ngồi Ở Giữa", "Kỉ Niệm Cuối Ngày", "Lớp Tôi Là Số 1",
+  "Gần Hết Ảnh Rồi", "Cố Gắng Xem Hết Nha", "Ảnh Tết Căng Nhất 2026", "Ae Trai Đẹp A4", "Ảnh Mờ Lem",
+  "Trao Bằng Khen Cho Ae Nè", "Troll Vn=)))"
+];
+
 // Danh sách ảnh và lời dẫn
 const albumImages = [
   album1, album2, album3, album4, album5, album6, album7, album8, album9, album10,
@@ -57,6 +69,7 @@ const albumImages = [
 ].map((src, index) => ({
   src,
   caption: `Khoảnh khắc ${index + 1} cùng cô Minh`,
+  scene: sceneNames[index] || `Khung cảnh ${index + 1}`,
 }));
 
 export default function AlbumPage() {
@@ -149,8 +162,10 @@ export default function AlbumPage() {
               alt={currentImage.caption}
               className="w-full max-h-[400px] object-cover rounded-md shadow-md"
             />
-            <p className="mt-4 text-sm sm:text-base text-gray-700">{currentImage.caption}</p>
-          </div>
+            <p className="text-pink-500 font-semibold text-base sm:text-lg mb- mt-2">
+              {currentImage.scene}
+            </p>          
+</div>
         </div>
       )}
 
