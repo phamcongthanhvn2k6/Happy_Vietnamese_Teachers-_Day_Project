@@ -1,21 +1,19 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import bg from "../../assets/Start.jpg";
 import music from "../../assets/Xe-Dap.mp3";
+import { initAudio, playAudio } from "../../AudioController";
 
 export default function Start() {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const navigate = useNavigate();
+
   useEffect(() => {
-    audioRef.current = new Audio(music);
-    audioRef.current.loop = true;
+    initAudio(music);
   }, []);
 
   const handleStart = () => {
+    playAudio();
     navigate("/Opening-Letter");
-    audioRef.current?.play().catch(() => {
-      console.log("Trình duyệt chặn autoplay, cần người dùng bấm nút.");
-    });
   };
 
   useEffect(() => {
@@ -23,14 +21,11 @@ export default function Start() {
       const flower = document.createElement("div");
       flower.className = "flower";
       flower.innerText = "🌸";
-
       flower.style.left = Math.random() * window.innerWidth + "px";
       flower.style.animationDuration = 3 + Math.random() * 3 + "s";
-
       document.body.appendChild(flower);
       setTimeout(() => flower.remove(), 6000);
     }, 300);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -48,12 +43,10 @@ export default function Start() {
         <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-pink-600 drop-shadow-xl animate-fade-in">
           Chào mừng Ngày Nhà Giáo Việt Nam 20/11
         </h1>
-
         <p className="text-base sm:text-lg text-pink-800 mb-8 leading-relaxed animate-fade-in delay-200">
           Xin gửi lời tri ân sâu sắc đến những người lái đò thầm lặng — những thầy
           cô đã và đang tận tâm cống hiến cho sự nghiệp trồng người.
         </p>
-
         <button
           onClick={handleStart}
           className="px-6 py-3 sm:px-8 sm:py-4 bg-pink-400 text-white font-semibold rounded-full text-lg sm:text-xl hover:bg-pink-300 transition-all shadow-lg animate-fade-in delay-500"

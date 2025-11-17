@@ -7,7 +7,7 @@ import typeSound from "../../assets/writingSound.mp3";
 export default function LetterTypingPage() {
   const navigate = useNavigate();
   const fullText = `
-  
+
 Cô kính mến,
 
 Những năm tháng học trò của chúng em đã trôi qua thật nhanh, nhưng những bài học, những lời dạy dỗ và tình cảm mà cô dành cho chúng em sẽ mãi mãi khắc ghi trong tim.
@@ -89,10 +89,10 @@ Tập thể lớp 12A1`;
         {isFinished && (
           <div className="text-center mt-8">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/video-page")}
               className="bg-pink-400 hover:bg-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all"
             >
-              ⬅ Quay về trang chủ
+              Hành Trình Tiếp Theo ➤
             </button>
           </div>
         )}

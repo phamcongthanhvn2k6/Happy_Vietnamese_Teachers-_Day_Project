@@ -4,6 +4,7 @@ import OpeningLetter from './page/OpeningLetter/OpeningLetter'
 import TeacherInfo from './page/TeacherInfo/TeacherInfo'
 import AlbumPage from './page/AlbumPage/AlbumPage'
 import LetterPage from './page/LetterPage/LetterPage'
+import VideoPage from './page/VideoPage/VideoPage'
 
 function RouterSetUp() {
   return (
@@ -16,6 +17,7 @@ function RouterSetUp() {
                 <Route path="/Teacher-Info" element={<TeacherInfo />} />
                 <Route path="/Album-Page" element={<AlbumPage />} />
                 <Route path="/letter-page" element={<LetterPage />} />
+                <Route path="/video-page" element={<VideoPage />} />
             </Routes>
         </BrowserRouter>
     </div>

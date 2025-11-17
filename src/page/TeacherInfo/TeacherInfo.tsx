@@ -39,25 +39,25 @@ export default function TeacherInfo() {
 
         {/* Ảnh 1 + lời thoại */}
         <div className="flex flex-col sm:flex-row items-center gap-y-4 sm:gap-6 animate-fade-in delay-200">
-          <img src={photo1} alt="Cô Minh 1" className="rounded-xl shadow-md object-cover w-full sm:w-1/2 max-h-[240px]" />
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
-            “Em vẫn nhớ ánh mắt cô hôm ấy – khi em nộp bài kiểm tra với đôi tay run rẩy. Cô không trách, chỉ nhẹ nhàng nói: ‘Sai để học, con ạ.’”
+          <img src={photo1} alt="Cô Minh 1" className="rounded-xl shadow-md object-cover w-full sm:w-1/2 max-h-60" />
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-word">
+            “Khoảnh khắc cô ôm em trước bảng hoa ấy, em thấy mình thật nhỏ bé nhưng được yêu thương vô cùng. Cô không chỉ dạy chữ, mà còn dạy em cách làm người.”
           </p>
         </div>
 
         {/* Ảnh 2 + lời thoại */}
         <div className="flex flex-col sm:flex-row-reverse items-center gap-y-4 sm:gap-6 animate-fade-in delay-400">
-          <img src={photo2} alt="Cô Minh 2" className="rounded-xl shadow-md object-cover w-full sm:w-1/2 max-h-[240px]" />
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
-            “Buổi chiều cuối năm ấy, cô đứng giữa lớp, giọng nghẹn ngào khi nói lời chia tay. Em đã khóc, vì biết mình sắp xa một người mẹ thứ hai.”
+          <img src={photo2} alt="Cô Minh 2" className="rounded-xl shadow-md object-cover w-full sm:w-1/2 max-h-60" />
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed wrap-break-word">
+            “Cô luôn là người truyền năng lượng tích cực – từ nụ cười, ánh mắt đến cả cách cô giơ tay tạo hình trái tim. Em thấy mình được tiếp thêm sức mạnh mỗi khi nhìn thấy cô.”
           </p>
         </div>
 
         {/* Ảnh 3 + lời thoại */}
         <div className="flex flex-col sm:flex-row items-center gap-y-4 sm:gap-6 animate-fade-in delay-600">
-          <img src={photo3} alt="Cô Minh 3" className="rounded-xl shadow-md object-cover w-full sm:w-1/2 max-h-[240px]" />
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
-            “Thật ra học ở khu tự trị nhiều nên mới đăng tấm này lên thôi.”
+          <img src={photo3} alt="Cô Minh 3" className="rounded-xl shadow-md object-cover w-full sm:w-1/2 max-h-60" />
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed wrap-break-word">
+            “Ai bảo cô giáo thì phải nghiêm? Cô Minh của chúng em có thể đội mặt nạ ếch, mặc đồ hồng rực rỡ, chỉ để mang lại tiếng cười cho cả lớp. Cô là niềm vui của tuổi học trò.”
           </p>
         </div>
       </div>
