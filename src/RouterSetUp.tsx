@@ -5,6 +5,7 @@ import TeacherInfo from './page/TeacherInfo/TeacherInfo'
 import AlbumPage from './page/AlbumPage/AlbumPage'
 import LetterPage from './page/LetterPage/LetterPage'
 import VideoPage from './page/VideoPage/VideoPage'
+import MemoryGallery from './page/MemoryGallery/MemoryGallery'
 
 function RouterSetUp() {
   return (
@@ -18,6 +19,7 @@ function RouterSetUp() {
                 <Route path="/Album-Page" element={<AlbumPage />} />
                 <Route path="/letter-page" element={<LetterPage />} />
                 <Route path="/video-page" element={<VideoPage />} />
+                <Route path="/memory-gallery" element={<MemoryGallery />} />
             </Routes>
         </BrowserRouter>
     </div>

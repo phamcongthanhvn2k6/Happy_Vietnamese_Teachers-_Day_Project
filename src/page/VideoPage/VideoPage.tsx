@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bg from "../../assets/bg-pink-paste.jpg";
-import { pauseAudio } from "../../AudioController";
+import music from "../../assets/Xe-Dap.mp3";
+import { initAudio, playAudio, pauseAudio } from "../../AudioController";
 
 export default function VideoPage() {
   const navigate = useNavigate();
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    pauseAudio(); // Tắt nhạc nền khi vào trang video
+    initAudio(music); // Khởi tạo nhạc nền
+    pauseAudio();     // Tắt nhạc khi vào trang video
 
     const interval = setInterval(() => {
       const flower = document.createElement("div");
@@ -19,8 +21,14 @@ export default function VideoPage() {
       document.body.appendChild(flower);
       setTimeout(() => flower.remove(), 6000);
     }, 300);
+
     return () => clearInterval(interval);
   }, []);
+
+  const handleContinue = () => {
+    playAudio(); // Bật lại nhạc nền
+    navigate("/memory-gallery");
+  };
 
   return (
     <div
@@ -34,7 +42,7 @@ export default function VideoPage() {
     >
       {/* Modal lời nhắn */}
       {!showVideo && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-20 animate-fade-in">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-20 animate-fade-in px-4">
           <div className="modal-content bg-white rounded-xl shadow-xl p-6 sm:p-10 max-w-md text-center space-y-6">
             <h2 className="text-xl sm:text-2xl font-bold text-pink-600 handwriting">
               Chào mừng bạn đến với khoảnh khắc đặc biệt!
@@ -72,10 +80,10 @@ export default function VideoPage() {
 
       {/* Nút quay về */}
       <button
-        onClick={() => navigate("/")}
+        onClick={handleContinue}
         className="mt-8 bg-pink-400 hover:bg-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all text-sm sm:text-base z-10"
       >
-        ⬅ Quay về trang chủ
+        Tiếp tục bộ sưu tập ký ức
       </button>
 
       <style>{`
