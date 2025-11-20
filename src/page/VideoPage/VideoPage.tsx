@@ -7,6 +7,7 @@ import { initAudio, playAudio, pauseAudio } from "../../AudioController";
 export default function VideoPage() {
   const navigate = useNavigate();
   const [showVideo, setShowVideo] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   useEffect(() => {
     initAudio(music); // Khởi tạo nhạc nền
@@ -68,7 +69,7 @@ export default function VideoPage() {
       {/* Video */}
       {showVideo && (
         <div className="video-container w-full max-w-2xl rounded-xl overflow-hidden shadow-xl backdrop-blur-md animate-fade-in z-10">
-          <video className="w-full h-full" controls autoPlay>
+          <video className="w-full h-full" controls autoPlay onEnded={() => setVideoEnded(true)}>
             <source
               src="https://res.cloudinary.com/dkzrqnahy/video/upload/v1763374848/18_ow5uua.mp4"
               type="video/mp4"
@@ -79,12 +80,14 @@ export default function VideoPage() {
       )}
 
       {/* Nút quay về */}
-      <button
-        onClick={handleContinue}
-        className="mt-8 bg-pink-400 hover:bg-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all text-sm sm:text-base z-10"
-      >
-        Tiếp tục bộ sưu tập ký ức
-      </button>
+      {videoEnded && (
+        <button
+          onClick={handleContinue}
+          className="mt-8 bg-pink-400 hover:bg-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all text-sm sm:text-base z-10"
+        >
+          Tiếp tục bộ sưu tập ký ức
+        </button>
+      )}
 
       <style>{`
         .handwriting {
