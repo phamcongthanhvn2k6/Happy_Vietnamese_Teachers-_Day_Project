@@ -21,7 +21,7 @@ Nhân ngày Nhà giáo Việt Nam 20/11, chúng em xin kính chúc cô luôn m�
 Chúng em yêu cô rất nhiều!
 
 Thân ái,
-Tập thể lớp 12A1`;
+Tập thể lớp 12A4`;
 
   const [displayText, setDisplayText] = useState("");
   const [isFinished, setIsFinished] = useState(false);
